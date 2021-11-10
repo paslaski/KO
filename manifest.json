@@ -1,0 +1,33 @@
+{
+    "name": "KO",
+    "description": "Displays the classic Chessbrah (Street Fighter) K.O. effect after chess victories",
+    "version": "1.0",
+    "manifest_version": 3,
+    "content_scripts": [
+        {
+            "matches": ["https://lichess.org/*", "https://www.chess.com/*"],
+            "js": ["content.js"]
+        }
+    ],
+    "web_accessible_resources": [{ 
+        "resources": ["Street_Fighter_KO.webm"],
+        "matches": ["https://lichess.org/*", "https://www.chess.com/*"]
+      }],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": ["storage", "activeTab", "scripting", "unlimitedStorage"],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "black16.png",
+            "48": "black48.png",
+            "128": "black128.png"
+        }
+    },
+    "icons": {
+        "16": "black16.png",
+        "48": "black48.png",
+        "128": "black128.png" },
+    "options_page": "options.html"
+}
